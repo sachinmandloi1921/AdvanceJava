@@ -1,0 +1,32 @@
+package in.co.sachin;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+public class loginmodel extends loginbean {
+public void add(loginbean b) throws Exception {
+		
+		Class.forName("com.mysql.jdbc.Driver");
+		
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sachin","root","root");
+		conn.setAutoCommit(false);
+		PreparedStatement ps=conn.prepareStatement("insert into mandloi values(?,?)");
+		
+		ps.setString(1,b.getid());
+		ps.setString(2,b.getPassword());
+		
+		int i = ps.executeUpdate();
+
+		conn.commit();
+
+		System.out.println(i + ":Record Inserted");
+
+		ps.close();
+		conn.close();
+
+		
+
+}
+
+}

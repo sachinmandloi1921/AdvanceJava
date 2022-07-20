@@ -1,0 +1,43 @@
+package in.co.Deepraj;
+
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import in.co.Deepraj.loginbean;
+import in.co.Deepraj.loginmodel;
+
+@WebServlet(urlPatterns = "/log")
+
+public class loginctrl extends HttpServlet {
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		System.out.println("doget");
+
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+		System.out.println("do post");
+		String id=req.getParameter("id");
+		String password=req.getParameter("password");
+		loginbean b =new loginbean();
+		b.setLogin(id);
+		b.setPassword(password);
+		loginmodel m  = new loginmodel();
+		try {
+			m.add(b);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
+         

@@ -1,0 +1,18 @@
+package in.co.sachin;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+public class RegModel extends Regbean {
+
+	public void add(Regbean bean) throws Exception {
+		
+		Class.forName("com.mysql.jdbc.Driver");
+		
+		Connection conn = DriverManager.getConnection("\"jdbc:mysql://localhost:3306/sachin","root","root");
+		conn.setAutoCommit(false);
+		PreparedStatement ps=c
+	}
+
+}

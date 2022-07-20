@@ -1,0 +1,102 @@
+package cntl;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.omg.CORBA.Request;
+
+import in.co.sachin.RegModel;
+import in.co.sachin.Regbean;
+
+@WebServlet("/login")
+
+public class loginctrl extends HttpServlet {
+	
+
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	System.out.println("doget");
+		
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("do post");
+	
+		String l = request.getParameter("id");
+		String ps = request.getParameter("pwd");
+		String idReg = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+		String pwdReg = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{8,15})";
+				
+		
+		Regbean sb = new Regbean();
+		RegModel sm = new RegModel();
+		
+		
+		if(l.equals("Sachin123")&&ps.equals("Rabh@1921")) {
+			RequestDispatcher rd =request.getRequestDispatcher("loginview.jsp");
+			request.setAttribute("Lmsg", "login id is required");
+			request.setAttribute("Pmsg", "password is required");
+			rd.forward(request, response);
+			
+			
+		}else if(l.equals("sachin")) {
+			RequestDispatcher rd =request.getRequestDispatcher("loginview.jsp");
+			request.setAttribute("Lmsg", "login id is required");
+			
+			rd.forward(request, response);
+			
+			
+		}else if(ps.equals("rabh")) {
+			RequestDispatcher rd =request.getRequestDispatcher("loginview.jsp");
+			request.setAttribute("Pmsg", "password is required");
+			rd.forward(request, response);
+			
+			
+		}
+	
+			try {
+				sb = sm.Authenticate(l, ps);
+			     if (sb.getId() !=null){
+					//vister count
+			    	 
+			    	 ServletContext x=getServletContext();
+			    	 Integer count=(Integer) x.getAttribute("visitcount");
+			    	 if(count==null) {
+			    		 count=1;
+			    	 }else {
+			    		 count++;
+			    		 
+			    		 x.setAttribute("visitcount", count);
+			    		 PrintWriter out=response.getWriter();
+			    	 }
+			    	 
+			    	 
+			    	 RequestDispatcher rd =request.getRequestDispatcher("welcomeview.jsp");
+					request.setAttribute("Fmsg",sb.getFirstName());
+			     	rd.forward(request, response);
+					
+				} else {
+					RequestDispatcher rd =request.getRequestDispatcher("loginview.jsp");
+					request.setAttribute("msg", "You are invalid user please fill correct details");
+					rd.forward(request, response);
+					
+				}
+			}catch (Exception e) {
+				e.printStackTrace();
+					System.out.println("Error in Authenticate");
+				}
+				
+			}
+	
+	}
+
+

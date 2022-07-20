@@ -1,0 +1,34 @@
+package in.co.sachin;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet(urlPatterns = "/VisitorCounter")
+public class vctl extends HttpServlet {
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		ServletContext x = getServletContext();
+		Integer count = (Integer) x.getAttribute("VisitCount");
+		if (count == null) {
+			count = 1;
+		} else {
+			count++;
+
+			x.setAttribute("VisitCount", count);
+			PrintWriter out = resp.getWriter();
+			out.println("<html><body>");
+			out.println("<h1>VisitorCount:" + count + "</h1>");
+			out.println("</body></html>");
+		}
+
+	}
+
+}

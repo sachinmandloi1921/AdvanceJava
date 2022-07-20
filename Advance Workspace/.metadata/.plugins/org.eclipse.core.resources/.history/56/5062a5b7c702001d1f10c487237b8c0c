@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Log-In</title>
+</head>
+<body>
+<h1 style="color :red;"> <a href="#"angin="right"> logout</a>
+     <%  
+String s =(String) request.getAttribute("Nmsg");
+     String F=(String)request.getAttribute("Fmsg");
+if(s!=null){
+%><h1 color ="red"> Hi  "<%=s %>" </h1><br>
+
+  <a href="loginview.jsp"><b>LogOut</b></a>
+  <%} %>
+        <center><h1   style="color:navy blue" >Welcome to Silver Shades</h1></center>
+    </h1>
+    <tr>
+    <font color="red"> <%if(F!=null){ %><%=F %><%} %></font></td>
+					</tr>
+</body>
+</html>

@@ -1,0 +1,59 @@
+package in.co.sachin;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/login")
+public class loginctrl extends HttpServlet {
+	
+
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	System.out.println("doget");
+		
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("do post");
+	
+		String l = request.getParameter("login");
+		String ps = request.getParameter("password");
+		String si = request.getParameter("SignIn");
+		
+		
+		Regbean sb = new Regbean();
+		RegModel sm = new RegModel();
+		
+	if (si.equals("SignIn")) {
+		
+			try {
+				sb = sm.Authenticate(l, ps);
+				
+				if (sb.getFname() !=null){
+					
+					RequestDispatcher rd =request.getRequestDispatcher("WelcomeView.jsp");
+					rd.forward(request, response);
+					
+				} else {
+					RequestDispatcher rd =request.getRequestDispatcher("LoginView.jsp");
+					request.setAttribute("msg", "Please Enter Correct ID or Password");
+					rd.forward(request, response);
+					
+				}
+			}catch (Exception e) {
+				e.printStackTrace();
+					System.out.println("Error in Authenticate");
+				}
+				
+			}
+	
+	}
+
+}

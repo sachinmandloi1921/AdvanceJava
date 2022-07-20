@@ -1,0 +1,10 @@
+package in.co.sachin;
+
+public class RegModel {
+
+	public void add(Regbean bean) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

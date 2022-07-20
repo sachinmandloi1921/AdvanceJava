@@ -1,0 +1,54 @@
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body bg color = "Cyan">
+<form action="login" method="post">
+
+		<div align="center" style="background-color:yellow;">
+		
+			<h1>STUDENT REGISTRATION</h1>
+			<table>
+			<tr>
+					<th>id:</th>
+					<td><input type="text" name="id" size=30 value="" >
+					<font color="red"> login id required</font></td>
+					
+				</tr>
+				<tr>
+					<th>Password :</th>
+					<td><input type="password" name="pwd" size=30 value="">
+					<font color="red"> password required</font></td>
+				</tr>
+				
+				<tr>
+					<th></th>
+					<td colspan="2"><input type="submit" name="operation"
+					value="signin"> &nbsp;</td>
+				</tr>
+				<tr>
+				<td colspan="2" align="center"><a href="/RegView.jsp"><b>sign up</b></a>|
+					
+                 <a href="/reset_password">I forgot my password</a>
+				
+				</td>
+				</tr>
+				
+				 <%  
+String s =(String) request.getAttribute("Nmsg");
+if(s!=null){
+%>
+  <a href="welcomeview.jsp"><b>hii</b></a>
+  <%
+  } %>
+				
+				</table>
+					</div>
+
+</body>
+</html>

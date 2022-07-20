@@ -1,0 +1,13 @@
+127.0.0.1 - - [11/Jul/2022:16:28:18 +0530] "GET / HTTP/1.1" 404 709
+0:0:0:0:0:0:0:1 - - [11/Jul/2022:16:28:20 +0530] "GET /Advance_Maven/RegView.jsp HTTP/1.1" 200 1238
+0:0:0:0:0:0:0:1 - - [11/Jul/2022:16:28:51 +0530] "GET /Advance_Maven/loginview.jsp HTTP/1.1" 200 427
+0:0:0:0:0:0:0:1 - - [11/Jul/2022:16:52:59 +0530] "GET /Advance_Maven/RegView.jsp HTTP/1.1" 200 1283
+0:0:0:0:0:0:0:1 - - [11/Jul/2022:16:54:30 +0530] "POST /Advance_Maven/reg HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [11/Jul/2022:16:55:19 +0530] "GET /Advance_Maven/RegView.jsp HTTP/1.1" 200 1283
+0:0:0:0:0:0:0:1 - - [11/Jul/2022:16:55:45 +0530] "GET /Advance_Maven/RegView.jsp HTTP/1.1" 200 1287
+0:0:0:0:0:0:0:1 - - [11/Jul/2022:16:56:26 +0530] "GET /Advance_Maven/loginview.jsp HTTP/1.1" 200 427
+0:0:0:0:0:0:0:1 - - [11/Jul/2022:22:05:03 +0530] "POST /Advance_Maven/reg HTTP/1.1" 200 -
+127.0.0.1 - - [11/Jul/2022:22:11:55 +0530] "GET / HTTP/1.1" 404 709
+0:0:0:0:0:0:0:1 - - [11/Jul/2022:22:11:57 +0530] "GET /Advance_Maven/loginview.jsp HTTP/1.1" 200 545
+0:0:0:0:0:0:0:1 - - [11/Jul/2022:22:13:13 +0530] "GET /Advance_Maven/loginview.jsp HTTP/1.1" 200 550
+0:0:0:0:0:0:0:1 - - [11/Jul/2022:22:13:42 +0530] "POST /Advance_Maven/reg HTTP/1.1" 500 1186

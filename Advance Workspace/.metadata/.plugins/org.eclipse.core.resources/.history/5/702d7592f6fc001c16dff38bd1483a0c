@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="theme.css">
+	<script>
+		function validate()
+		{
+			var uname = document.getElementById('uname').value;
+			var pass = document.getElementById('password').value;
+			if(uname =='' && pass == ''){
+				alert('Please fill out enteries');
+				return false;
+			}
+			if(uname == ''){
+				alert('Please enter Username');
+				return false;
+			}
+			if(pass == ''){
+				alert('Please enter Password');
+				return false;
+			}
+			return true;
+		}
+	</script>
+</head>
+<body>
+	<div id="nav-bar">Login</div>
+	<div id="form">
+	  <form align=center onsubmit='return validate();'>
+	  	    <br><br>
+	    	<input type="text" placeholder="Enter User Name" id="uname" align="center" autofocus autocomplete="off">
+	    	<br><br>
+	    	<input type="password" placeholder="Enter password" id="password">
+	    	<br><br>
+	    	<input class="button" type="submit" value="Login">
+		<br><br>    	
+		
+	  </form>
+    </div>
+</body>
+</html>

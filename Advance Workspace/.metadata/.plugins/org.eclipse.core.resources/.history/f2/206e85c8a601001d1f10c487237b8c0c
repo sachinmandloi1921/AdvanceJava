@@ -1,0 +1,35 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="reg" method="post">
+
+		<div align="center" style="background-color:gray;">
+		
+			<h1>STUDENT REGISTRATION</h1>
+			<table>
+			<tr>
+					<th>id:</th>
+					<td><input type="text" name="id"  ></td>
+					<th>Id required</th>
+				</tr>
+				<tr>
+					<th>Password :</th>
+					<td><input type="password" name="pwd"></td>
+				</tr>
+				
+				<tr>
+					<th></th>
+					<td><input type="submit" value="Register"></td>
+					<td><input type="submit" value="Signup"></td>
+				</tr>
+				</table>
+					</div>
+
+</body>
+</html>

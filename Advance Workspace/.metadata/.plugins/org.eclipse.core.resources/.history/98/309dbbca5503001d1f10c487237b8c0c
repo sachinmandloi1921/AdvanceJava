@@ -1,0 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<ul>
+		<a href=""> About us </a> |
+		<a href=""> Login </a> |
+		<a href=""> Logout</a> |
+		<a href=""> My profile </a>
+	</ul>
+	<center>
+		<img src=/Advance_Maven/src/images/flower.jpeg>
+	</center>
+	<Hr>
+	<a href="loginview.jsp"></a>
+
+
+</body>
+</html>
